@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SWP Calculator
 
-## Getting Started
+A free online SWP (Systematic Withdrawal Plan) calculator for mutual fund investors. Calculate your monthly withdrawals, final value, and plan your retirement income.
+
+## 🎯 Features
+
+- ✅ Real-time calculation as you type
+- ✅ Clean, modern UI with gradient design
+- ✅ Mobile-responsive layout
+- ✅ SEO optimized for search engines
+- ✅ Indian Rupee (₹) formatting
+- ✅ Detailed SWP explanation
+
+## 📊 Calculator Inputs
+
+1. **Total Investment** - Your initial investment amount in rupees
+2. **Withdrawal Per Month** - Monthly withdrawal amount in rupees
+3. **Expected Return Rate** - Annual return rate in percentage
+4. **Time Period** - Investment duration in years
+
+## 📈 Calculator Outputs
+
+1. **Total Investment** - Your initial investment amount
+2. **Total Withdrawal** - Total amount withdrawn over the period
+3. **Final Value** - Remaining balance after the investment period
+
+## 🚀 Getting Started
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
 
-## Learn More
+## 📝 Project Status
 
-To learn more about Next.js, take a look at the following resources:
+- [x] Project setup with Next.js + TypeScript + Tailwind
+- [x] Core SWP calculation logic
+- [x] UI components with real-time updates
+- [x] SEO optimization (title, description, keywords)
+- [x] Local testing
+- [ ] Deploy to Vercel
+- [ ] Bind custom domain (swpcalculator.online)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Domain
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Registered domain: **swpcalculator.online**
+- Deployment target: Vercel
 
-## Deploy on Vercel
+## 🎨 Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Color scheme: Blue-Indigo gradient (professional financial feel)
+- Layout: Clean, functional, mobile-first
+- Typography: Geist Sans font
+- Responsive: Optimized for all screen sizes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📖 About SWP
+
+A Systematic Withdrawal Plan (SWP) is an investment strategy that allows you to withdraw a fixed amount from your mutual fund investment at regular intervals. It's ideal for retirees or those seeking regular income from their investments.
+
+## 🔗 Reference
+
+Inspired by [Groww SWP Calculator](https://groww.in/calculators/swp-calculator) with a cleaner, more modern design.
+
+## 📄 License
+
+MIT
+
+---
+
+**Built with ❤️ for Indian investors**
