@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { calculateSWP, formatCurrency, type SWPInput, type SWPResult } from '@/utils/swpCalculator';
+import FAQSection from './FAQSection';
 
 export default function SWPCalculator() {
   // Input state with default values
@@ -40,10 +42,10 @@ export default function SWPCalculator() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            SWP Calculator
+            SWP Calculator - Free Systematic Withdrawal Plan Calculator
           </h1>
           <p className="text-lg text-gray-600">
-            Calculate your Systematic Withdrawal Plan returns
+            Calculate your monthly withdrawals, final value, and plan your retirement income with our free online SWP calculator.
           </p>
         </div>
 
@@ -191,25 +193,116 @@ export default function SWPCalculator() {
           </div>
         </div>
 
-        {/* Info Section */}
-        <div className="bg-white rounded-2xl shadow-lg p-8">
+        {/* What is SWP Section */}
+        <section className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             What is SWP?
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            A Systematic Withdrawal Plan (SWP) is an investment strategy that allows you to withdraw a fixed amount from your mutual fund investment at regular intervals. It&apos;s ideal for retirees or those seeking regular income from their investments.
+          <p className="text-gray-600 leading-relaxed">
+            A Systematic Withdrawal Plan (SWP) is an investment strategy that allows mutual fund investors to withdraw a fixed amount at regular intervals. It&apos;s the opposite of SIP (Systematic Investment Plan) - instead of investing periodically, you withdraw periodically. SWP is ideal for retirees, parents funding education, or anyone seeking regular income from their investments. With SWP, your remaining investment continues to earn returns while you receive steady cash flow, providing both income and capital appreciation.
           </p>
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            How does this calculator work?
-          </h3>
-          <ul className="list-disc list-inside text-gray-600 space-y-2">
-            <li>Enter your total investment amount</li>
-            <li>Specify how much you want to withdraw each month</li>
-            <li>Input the expected annual return rate</li>
-            <li>Set the investment time period</li>
-            <li>The calculator shows your total withdrawal and remaining balance</li>
-          </ul>
-        </div>
+        </section>
+
+        {/* How SWP Works Section */}
+        <section className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+            How SWP Works
+          </h2>
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold mr-4">
+                1
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-1">Invest a Lump Sum</h3>
+                <p className="text-gray-600">
+                  Start with a one-time investment in a mutual fund of your choice.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold mr-4">
+                2
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-1">Set Withdrawal Amount</h3>
+                <p className="text-gray-600">
+                  Choose how much you want to withdraw each month based on your income needs.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold mr-4">
+                3
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-1">Earn Returns on Remaining Balance</h3>
+                <p className="text-gray-600">
+                  Your investment grows with market returns while you withdraw money regularly.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold mr-4">
+                4
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-1">Receive Regular Income</h3>
+                <p className="text-gray-600">
+                  Get your fixed monthly amount while maintaining investment growth potential.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <FAQSection />
+        </section>
+
+        {/* Internal Links Section */}
+        <section className="mb-8">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+              Learn More About SWP
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Link
+                href="/what-is-swp"
+                className="group bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-md transition-all"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600">
+                  What is SWP? →
+                </h3>
+                <p className="text-gray-600">
+                  Complete guide to understanding Systematic Withdrawal Plans, how they work, and who should use them.
+                </p>
+              </Link>
+              <Link
+                href="/swp-vs-sip"
+                className="group bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-6 hover:shadow-md transition-all"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-green-600">
+                  SWP vs SIP →
+                </h3>
+                <p className="text-gray-600">
+                  Compare Systematic Withdrawal Plan vs Systematic Investment Plan and know when to use each.
+                </p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="text-center text-gray-500 text-sm py-8">
+          <p>
+            © {new Date().getFullYear()} SWP Calculator. Free online tool for mutual fund investors.
+          </p>
+        </footer>
       </div>
     </div>
   );
