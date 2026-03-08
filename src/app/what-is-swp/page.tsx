@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'What is SWP? - Systematic Withdrawal Plan Explained | SWP Calculator',
-  description: 'Learn what SWP (Systematic Withdrawal Plan) is, how it works, its benefits, and who should use it. Complete guide to systematic withdrawal plans in mutual funds.',
+  description: 'Learn what SWP (Systematic Withdrawal Plan) is, how it works, benefits, and who should use it. Complete guide to systematic withdrawal plans in mutual funds.',
   keywords: 'what is swp, systematic withdrawal plan, swp meaning, swp in mutual funds, swp explained',
   alternates: {
     canonical: 'https://swpcalculator.online/what-is-swp',

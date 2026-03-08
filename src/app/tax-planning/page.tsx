@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Tax Planning for Mutual Funds - Capital Gains Tax Guide | SWP Calculator',
-  description: 'Complete guide to mutual fund taxation: LTCG, STCG, tax-saving funds (ELSS), indexation benefits, and tax-efficient investing strategies.',
+  description: 'Complete guide to mutual fund taxation in India: LTCG, STCG tax rates, tax-saving ELSS funds, indexation benefits, and tax-efficient investing strategies.',
   keywords: 'mutual fund tax, capital gains tax, LTCG, STCG, ELSS, tax planning, 80C, indexation',
   alternates: {
     canonical: 'https://swpcalculator.online/tax-planning',

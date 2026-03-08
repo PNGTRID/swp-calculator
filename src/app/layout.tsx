@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SWP Calculator - Free Systematic Withdrawal Plan Calculator",
-  description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
+  description: "Free SWP Calculator online. Calculate systematic withdrawal plan returns, monthly income, final value, and plan your retirement from mutual funds.",
   keywords: "swp calculator, systematic withdrawal plan, mutual fund calculator, investment calculator",
   authors: [{ name: "SWP Calculator" }],
   alternates: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     title: "SWP Calculator - Free Systematic Withdrawal Plan Calculator",
-    description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
+    description: "Free SWP (Systematic Withdrawal Plan) calculator online. Calculate monthly withdrawals, final value, and plan your retirement income from mutual funds.",
     type: "website",
     locale: "en_US",
     url: "https://swpcalculator.online/",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SWP Calculator - Free Systematic Withdrawal Plan Calculator",
-    description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
+    description: "Free SWP (Systematic Withdrawal Plan) calculator online. Calculate monthly withdrawals, final value, and plan your retirement income from mutual funds.",
     images: ['/og-image.png'],
   },
   robots: {

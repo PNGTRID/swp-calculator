@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Mutual Funds Basics - Complete Guide for Beginners | SWP Calculator',
-  description: 'Learn mutual fund basics: what are mutual funds, types of funds, how to invest, NAV, expense ratio, and more. Perfect guide for beginners.',
+  description: 'Learn mutual fund basics: what are mutual funds, types of funds, how to invest, NAV, expense ratio, and expert tips. Perfect guide for beginners in India.',
   keywords: 'mutual funds basics, what is mutual fund, types of mutual funds, how to invest in mutual funds, NAV, expense ratio',
   alternates: {
     canonical: 'https://swpcalculator.online/mutual-funds-basics',

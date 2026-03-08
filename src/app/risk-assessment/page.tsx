@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Investment Risk Assessment - Understand Your Risk Profile | SWP Calculator',
-  description: 'Learn about investment risk assessment, types of risks, how to determine your risk tolerance, and build a risk-appropriate portfolio.',
+  description: 'Learn about investment risk assessment, types of risks, determine your risk tolerance, and build a risk-appropriate portfolio for successful investing.',
   keywords: 'investment risk assessment, risk tolerance, risk profile, market risk, inflation risk, portfolio risk',
   alternates: {
     canonical: 'https://swpcalculator.online/risk-assessment',
