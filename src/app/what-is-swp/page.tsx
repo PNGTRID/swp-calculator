@@ -33,7 +33,7 @@ export default function WhatIsSWP() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <nav className="mb-6 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" title="SWP Calculator - Home" className="text-blue-600 hover:text-blue-800">Home</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">What is SWP</span>
           </nav>
@@ -149,7 +149,7 @@ export default function WhatIsSWP() {
           <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-4">Calculate Your SWP Returns</h2>
             <p className="mb-6 text-blue-100">Use our free SWP calculator to see how much you can withdraw.</p>
-            <Link href="/" className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <Link href="/" title="Try SWP Calculator - Free Online Tool" className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
               Try SWP Calculator →
             </Link>
           </div>

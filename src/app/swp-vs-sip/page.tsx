@@ -33,7 +33,7 @@ export default function SWPvsSIP() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <nav className="mb-6 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" title="SWP Calculator - Home" className="text-blue-600 hover:text-blue-800">Home</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">SWP vs SIP</span>
           </nav>
@@ -141,10 +141,10 @@ export default function SWPvsSIP() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Learn More</h2>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/what-is-swp" className="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg p-4 text-center transition-colors">
+                <Link href="/what-is-swp" title="What is SWP? - Complete Guide" className="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg p-4 text-center transition-colors">
                   <span className="text-gray-800 font-medium">What is SWP? →</span>
                 </Link>
-                <Link href="/" className="flex-1 bg-blue-500 hover:bg-blue-600 rounded-lg p-4 text-center text-white transition-colors">
+                <Link href="/" title="Try SWP Calculator - Free Online Tool" className="flex-1 bg-blue-500 hover:bg-blue-600 rounded-lg p-4 text-center text-white transition-colors">
                   <span className="font-medium">Try SWP Calculator →</span>
                 </Link>
               </div>

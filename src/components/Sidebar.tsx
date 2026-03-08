@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 const internalPages = [
-  { name: 'What is SWP?', href: '/what-is-swp', icon: '📖', desc: 'Learn about Systematic Withdrawal Plans' },
-  { name: 'SWP vs SIP', href: '/swp-vs-sip', icon: '⚖️', desc: 'Compare investment strategies' },
+  { name: 'What is SWP?', href: '/what-is-swp', icon: '📖', desc: 'Learn about Systematic Withdrawal Plans', title: 'What is SWP? - Systematic Withdrawal Plan Guide' },
+  { name: 'SWP vs SIP', href: '/swp-vs-sip', icon: '⚖️', desc: 'Compare investment strategies', title: 'SWP vs SIP Comparison - Investment Strategies' },
 ];
 
 const swpTips = [
@@ -29,10 +29,10 @@ const swpTips = [
 ];
 
 const investmentBasics = [
-  { name: 'Mutual Funds Basics', href: '/mutual-funds-basics', icon: '📚' },
-  { name: 'Risk Assessment', href: '/risk-assessment', icon: '⚠️' },
-  { name: 'Tax Planning', href: '/tax-planning', icon: '💰' },
-  { name: 'Retirement Planning', href: '/retirement-planning', icon: '🏖️' },
+  { name: 'Mutual Funds Basics', href: '/mutual-funds-basics', icon: '📚', title: 'Mutual Funds Basics - Complete Guide for Beginners' },
+  { name: 'Risk Assessment', href: '/risk-assessment', icon: '⚠️', title: 'Risk Assessment - Investment Risk Analysis Guide' },
+  { name: 'Tax Planning', href: '/tax-planning', icon: '💰', title: 'Tax Planning - Tax-Efficient Investment Strategies' },
+  { name: 'Retirement Planning', href: '/retirement-planning', icon: '🏖️', title: 'Retirement Planning - Financial Planning for Retirement' },
 ];
 
 export default function Sidebar() {
@@ -48,6 +48,7 @@ export default function Sidebar() {
             <Link
               key={page.href}
               href={page.href}
+              title={page.title}
               className="block p-3 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-colors group"
             >
               <div className="flex items-center gap-2">
@@ -90,6 +91,7 @@ export default function Sidebar() {
             <Link
               key={page.href}
               href={page.href}
+              title={page.title}
               className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
             >
               <span className="text-base">{page.icon}</span>

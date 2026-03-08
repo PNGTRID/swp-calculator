@@ -33,7 +33,7 @@ export default function RetirementPlanning() {
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-violet-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <nav className="mb-6 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" title="SWP Calculator - Home" className="text-blue-600 hover:text-blue-800">Home</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">Retirement Planning</span>
           </nav>
@@ -208,7 +208,7 @@ export default function RetirementPlanning() {
           <div className="bg-gradient-to-r from-purple-500 to-violet-600 rounded-2xl shadow-lg p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-4">Calculate Your Retirement SWP</h2>
             <p className="mb-6 text-purple-100">Plan your retirement income with our free SWP calculator.</p>
-            <Link href="/" className="inline-block bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
+            <Link href="/" title="Try SWP Calculator - Free Online Tool" className="inline-block bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
               Try SWP Calculator →
             </Link>
           </div>

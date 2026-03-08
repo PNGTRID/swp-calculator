@@ -267,10 +267,10 @@ export default function SWPCalculator() {
             {/* Internal Links */}
             <section>
               <div className="grid grid-cols-2 gap-3">
-                <Link href="/what-is-swp" className="bg-blue-50 hover:bg-blue-100 rounded-xl p-4 text-center transition-colors border border-blue-100">
+                <Link href="/what-is-swp" title="What is SWP? - Complete Guide to Systematic Withdrawal Plans" className="bg-blue-50 hover:bg-blue-100 rounded-xl p-4 text-center transition-colors border border-blue-100">
                   <p className="text-sm font-medium text-gray-800">What is SWP? →</p>
                 </Link>
-                <Link href="/swp-vs-sip" className="bg-green-50 hover:bg-green-100 rounded-xl p-4 text-center transition-colors border border-green-100">
+                <Link href="/swp-vs-sip" title="SWP vs SIP - Compare Investment Strategies" className="bg-green-50 hover:bg-green-100 rounded-xl p-4 text-center transition-colors border border-green-100">
                   <p className="text-sm font-medium text-gray-800">SWP vs SIP →</p>
                 </Link>
               </div>

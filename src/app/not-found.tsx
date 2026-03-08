@@ -31,6 +31,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
+            title="SWP Calculator - Free Online Tool"
             className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,6 +41,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/what-is-swp"
+            title="Learn About SWP - Systematic Withdrawal Plan Guide"
             className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors border border-blue-200"
           >
             Learn About SWP
@@ -52,19 +54,19 @@ export default function NotFound() {
             Popular Pages
           </h2>
           <div className="grid grid-cols-2 gap-3">
-            <Link href="/" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
+            <Link href="/" title="SWP Calculator - Calculate Withdrawal Plan" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
               <span className="text-2xl mb-1 block">📊</span>
               <span className="text-sm text-gray-700">SWP Calculator</span>
             </Link>
-            <Link href="/what-is-swp" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
+            <Link href="/what-is-swp" title="What is SWP? - Complete Guide" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
               <span className="text-2xl mb-1 block">📖</span>
               <span className="text-sm text-gray-700">What is SWP?</span>
             </Link>
-            <Link href="/retirement-planning" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
+            <Link href="/retirement-planning" title="Retirement Planning Guide" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
               <span className="text-2xl mb-1 block">🏖️</span>
               <span className="text-sm text-gray-700">Retirement Planning</span>
             </Link>
-            <Link href="/tax-planning" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
+            <Link href="/tax-planning" title="Tax Planning Strategies" className="p-3 bg-white rounded-lg shadow-sm hover:shadow transition-shadow">
               <span className="text-2xl mb-1 block">💰</span>
               <span className="text-sm text-gray-700">Tax Planning</span>
             </Link>

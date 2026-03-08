@@ -47,7 +47,7 @@ export default function MutualFundsBasics() {
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
           <nav className="mb-6 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+            <Link href="/" title="SWP Calculator - Home" className="text-blue-600 hover:text-blue-800">Home</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">Mutual Funds Basics</span>
           </nav>
@@ -186,6 +186,7 @@ export default function MutualFundsBasics() {
             </p>
             <Link
               href="/"
+              title="Try SWP Calculator - Free Online Tool"
               className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
               Try SWP Calculator →
