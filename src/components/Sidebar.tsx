@@ -29,10 +29,10 @@ const swpTips = [
 ];
 
 const investmentBasics = [
-  { name: 'Mutual Funds Basics', icon: '📚' },
-  { name: 'Risk Assessment', icon: '⚠️' },
-  { name: 'Tax Planning', icon: '💰' },
-  { name: 'Retirement Planning', icon: '🏖️' },
+  { name: 'Mutual Funds Basics', href: '/mutual-funds-basics', icon: '📚' },
+  { name: 'Risk Assessment', href: '/risk-assessment', icon: '⚠️' },
+  { name: 'Tax Planning', href: '/tax-planning', icon: '💰' },
+  { name: 'Retirement Planning', href: '/retirement-planning', icon: '🏖️' },
 ];
 
 export default function Sidebar() {
@@ -80,23 +80,22 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Investment Basics - Coming Soon */}
+      {/* Investment Basics */}
       <div className="bg-white rounded-2xl shadow-lg p-4">
         <h3 className="text-base font-semibold text-gray-800 mb-3 flex items-center gap-2">
           <span>📖</span> Investment Basics
         </h3>
         <div className="space-y-2">
-          {investmentBasics.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 text-gray-400"
+          {investmentBasics.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <span className="text-sm">{item.icon}</span>
-              <span className="text-sm">{item.name}</span>
-              <span className="text-xs bg-gray-200 text-gray-500 px-1.5 py-0.5 rounded ml-auto">
-                Soon
-              </span>
-            </div>
+              <span className="text-base">{page.icon}</span>
+              <span className="text-sm text-gray-700 group-hover:text-blue-600 flex-1">{page.name}</span>
+              <span className="text-xs text-gray-400 group-hover:text-blue-500">→</span>
+            </Link>
           ))}
         </div>
       </div>
