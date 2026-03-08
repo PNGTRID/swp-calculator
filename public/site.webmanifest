@@ -1,0 +1,17 @@
+{
+  "name": "SWP Calculator",
+  "short_name": "SWP Calc",
+  "description": "Free online SWP (Systematic Withdrawal Plan) calculator for mutual fund investors",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

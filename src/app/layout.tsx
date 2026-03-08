@@ -21,22 +21,44 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://swpcalculator.online/",
   },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon', sizes: '180x180' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#3B82F6' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: "SWP Calculator - Free Systematic Withdrawal Plan Calculator",
     description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
     type: "website",
     locale: "en_US",
     url: "https://swpcalculator.online/",
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SWP Calculator - Free Online Tool',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "SWP Calculator - Free Systematic Withdrawal Plan Calculator",
     description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
     follow: true,
   },
+  themeColor: '#3B82F6',
 };
 
 // JSON-LD for WebApplication
