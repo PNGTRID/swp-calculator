@@ -5,35 +5,65 @@ export const metadata: Metadata = {
   title: 'SWP vs SIP - Difference Between Systematic Withdrawal and Investment Plans | SWP Calculator',
   description: 'Compare SWP (Systematic Withdrawal Plan) vs SIP (Systematic Investment Plan). Understand the key differences, benefits, and when to use each strategy.',
   keywords: 'swp vs sip, systematic withdrawal plan vs systematic investment plan, swp sip difference, mutual fund comparison',
+  alternates: {
+    canonical: 'https://swpcalculator.online/swp-vs-sip',
+  },
   openGraph: {
     title: 'SWP vs SIP - Key Differences Explained',
     description: 'Compare SWP vs SIP and understand when to use each strategy for your mutual fund investments.',
     type: 'article',
+    url: 'https://swpcalculator.online/swp-vs-sip',
   },
+};
+
+// Article JSON-LD
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SWP vs SIP: What's the Difference?",
+  "description": "Compare SWP (Systematic Withdrawal Plan) vs SIP (Systematic Investment Plan). Understand the key differences and when to use each strategy.",
+  "author": {
+    "@type": "Organization",
+    "name": "SWP Calculator"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SWP Calculator",
+    "url": "https://swpcalculator.online"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://swpcalculator.online/swp-vs-sip"
+  }
 };
 
 export default function SWPvsSIP() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Breadcrumb */}
-        <nav className="mb-6 text-sm">
-          <Link href="/" className="text-blue-600 hover:text-blue-800">
-            Home
-          </Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <span className="text-gray-600">SWP vs SIP</span>
-        </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="mb-6 text-sm">
+            <Link href="/" className="text-blue-600 hover:text-blue-800">
+              Home
+            </Link>
+            <span className="mx-2 text-gray-400">/</span>
+            <span className="text-gray-600">SWP vs SIP</span>
+          </nav>
 
-        {/* Header */}
-        <header className="mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            SWP vs SIP: What&apos;s the Difference?
-          </h1>
-          <p className="text-xl text-gray-600">
-            Understanding when to use Systematic Withdrawal Plan vs Systematic Investment Plan
-          </p>
-        </header>
+          {/* Header */}
+          <header className="mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              SWP vs SIP: What&apos;s the Difference?
+            </h1>
+            <p className="text-xl text-gray-600">
+              Understanding when to use Systematic Withdrawal Plan vs Systematic Investment Plan
+            </p>
+          </header>
 
         {/* Content */}
         <article className="bg-white rounded-2xl shadow-lg p-8 mb-8">

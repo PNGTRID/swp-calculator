@@ -18,17 +18,41 @@ export const metadata: Metadata = {
   description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
   keywords: "swp calculator, systematic withdrawal plan, mutual fund calculator, investment calculator",
   authors: [{ name: "SWP Calculator" }],
+  alternates: {
+    canonical: "https://swpcalculator.online/",
+  },
   openGraph: {
     title: "SWP Calculator - Free Systematic Withdrawal Plan Calculator",
     description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
     type: "website",
     locale: "en_US",
+    url: "https://swpcalculator.online/",
   },
   twitter: {
     card: "summary_large_image",
     title: "SWP Calculator - Free Systematic Withdrawal Plan Calculator",
     description: "Free online SWP (Systematic Withdrawal Plan) calculator. Calculate your monthly withdrawals, final value, and plan your retirement income.",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+// JSON-LD for WebApplication
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SWP Calculator",
+  "description": "Free online SWP (Systematic Withdrawal Plan) calculator for mutual fund investors. Calculate your monthly withdrawals, final value, and plan your retirement income.",
+  "url": "https://swpcalculator.online",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 };
 
 export default function RootLayout({
@@ -38,6 +62,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

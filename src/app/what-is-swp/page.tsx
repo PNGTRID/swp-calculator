@@ -5,49 +5,79 @@ export const metadata: Metadata = {
   title: 'What is SWP? - Systematic Withdrawal Plan Explained | SWP Calculator',
   description: 'Learn what SWP (Systematic Withdrawal Plan) is, how it works, its benefits, and who should use it. Complete guide to systematic withdrawal plans in mutual funds.',
   keywords: 'what is swp, systematic withdrawal plan, swp meaning, swp in mutual funds, swp explained',
+  alternates: {
+    canonical: 'https://swpcalculator.online/what-is-swp',
+  },
   openGraph: {
     title: 'What is SWP? - Systematic Withdrawal Plan Explained',
     description: 'Learn what SWP is, how it works, its benefits, and who should use it. Complete guide to systematic withdrawal plans.',
     type: 'article',
+    url: 'https://swpcalculator.online/what-is-swp',
   },
+};
+
+// Article JSON-LD
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is SWP (Systematic Withdrawal Plan)?",
+  "description": "Learn what SWP (Systematic Withdrawal Plan) is, how it works, its benefits, and who should use it. Complete guide to systematic withdrawal plans in mutual funds.",
+  "author": {
+    "@type": "Organization",
+    "name": "SWP Calculator"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SWP Calculator",
+    "url": "https://swpcalculator.online"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://swpcalculator.online/what-is-swp"
+  }
 };
 
 export default function WhatIsSWP() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Breadcrumb */}
-        <nav className="mb-6 text-sm">
-          <Link href="/" className="text-blue-600 hover:text-blue-800">
-            Home
-          </Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <span className="text-gray-600">What is SWP</span>
-        </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="mb-6 text-sm">
+            <Link href="/" className="text-blue-600 hover:text-blue-800">
+              Home
+            </Link>
+            <span className="mx-2 text-gray-400">/</span>
+            <span className="text-gray-600">What is SWP</span>
+          </nav>
 
-        {/* Header */}
-        <header className="mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            What is SWP (Systematic Withdrawal Plan)?
-          </h1>
-          <p className="text-xl text-gray-600">
-            A complete guide to understanding Systematic Withdrawal Plans in mutual funds
-          </p>
-        </header>
+          {/* Header */}
+          <header className="mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              What is SWP (Systematic Withdrawal Plan)?
+            </h1>
+            <p className="text-xl text-gray-600">
+              A complete guide to understanding Systematic Withdrawal Plans in mutual funds
+            </p>
+          </header>
 
-        {/* Content */}
-        <article className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-              Definition of SWP
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              A <strong>Systematic Withdrawal Plan (SWP)</strong> is a mutual fund facility that allows investors to withdraw a fixed amount from their investment at regular intervals. It&apos;s the opposite of SIP (Systematic Investment Plan) - instead of investing money periodically, you withdraw money periodically.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              SWP provides a steady income stream while keeping your remaining investment growing. This makes it an ideal choice for retirees, individuals seeking regular income, or those who want to create a disciplined withdrawal strategy from their investments.
-            </p>
-          </section>
+          {/* Content */}
+          <article className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                Definition of SWP
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                A <strong>Systematic Withdrawal Plan (SWP)</strong> is a mutual fund facility that allows investors to withdraw a fixed amount from their investment at regular intervals. It&apos;s the opposite of SIP (Systematic Investment Plan) - instead of investing money periodically, you withdraw money periodically.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                SWP provides a steady income stream while keeping your remaining investment growing. This makes it an ideal choice for retirees, individuals seeking regular income, or those who want to create a disciplined withdrawal strategy from their investments.
+              </p>
+            </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
