@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { calculateSWP, formatCurrency, getMonthlyData, type SWPInput, type SWPResult } from '@/utils/swpCalculator';
 import FAQSection from './FAQSection';
+import Footer from './Footer';
 import MonthlyBreakdown from './MonthlyBreakdown';
 import BalanceChart from './BalanceChart';
 import Sidebar from './Sidebar';
@@ -285,9 +286,7 @@ export default function SWPCalculator() {
         </div>
 
         {/* Footer */}
-        <footer className="text-center text-gray-400 text-xs py-6 mt-6">
-          © {new Date().getFullYear()} SWP Calculator - Free Online SWP Calculator for Mutual Fund Investors
-        </footer>
+        <Footer />
       </div>
     </div>
   );

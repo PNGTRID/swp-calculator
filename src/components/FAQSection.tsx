@@ -30,6 +30,20 @@ const faqData: FAQItem[] = [
   },
 ];
 
+// Generate FAQPage JSON-LD for SEO
+const generateFAQSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -38,30 +52,38 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="space-y-4">
-      {faqData.map((faq, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden"
-        >
-          <button
-            onClick={() => toggleFAQ(index)}
-            className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+    <>
+      {/* FAQ Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema()) }}
+      />
+
+      <div className="space-y-4">
+        {faqData.map((faq, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden"
           >
-            <h3 className="text-lg font-medium text-gray-900 pr-4">
-              {faq.question}
-            </h3>
-            <span className="text-blue-600 text-2xl flex-shrink-0">
-              {openIndex === index ? '−' : '+'}
-            </span>
-          </button>
-          {openIndex === index && (
-            <div className="px-6 pb-4 text-gray-600 leading-relaxed">
-              {faq.answer}
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
+            <button
+              onClick={() => toggleFAQ(index)}
+              className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+            >
+              <h3 className="text-lg font-medium text-gray-900 pr-4">
+                {faq.question}
+              </h3>
+              <span className="text-blue-600 text-2xl flex-shrink-0">
+                {openIndex === index ? '−' : '+'}
+              </span>
+            </button>
+            {openIndex === index && (
+              <div className="px-6 pb-4 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
