@@ -1,23 +1,38 @@
 import Link from 'next/link';
 
-const relatedCalculators = [
-  { name: 'SIP Calculator', href: 'https://groww.in/calculators/sip-calculator', external: true, icon: '📈' },
-  { name: 'Lumpsum Calculator', href: 'https://groww.in/calculators/lumpsum-calculator', external: true, icon: '💰' },
-  { name: 'FD Calculator', href: 'https://groww.in/calculators/fd-calculator', external: true, icon: '🏦' },
-  { name: 'RD Calculator', href: 'https://groww.in/calculators/rd-calculator', external: true, icon: '📊' },
-  { name: 'PPF Calculator', href: 'https://groww.in/calculators/ppf-calculator', external: true, icon: '🏛️' },
-];
-
 const internalPages = [
   { name: 'What is SWP?', href: '/what-is-swp', icon: '📖', desc: 'Learn about Systematic Withdrawal Plans' },
   { name: 'SWP vs SIP', href: '/swp-vs-sip', icon: '⚖️', desc: 'Compare investment strategies' },
 ];
 
-const quickTips = [
-  'Keep withdrawal rate below 8% of corpus to preserve capital',
-  'Choose funds with consistent returns for SWP',
-  'Review your SWP annually and adjust if needed',
-  'SWP works best in debt or hybrid funds',
+const swpTips = [
+  {
+    icon: '💡',
+    title: 'Ideal Withdrawal Rate',
+    desc: 'Keep withdrawal below 8% annually to preserve your capital',
+  },
+  {
+    icon: '🏦',
+    title: 'Best Funds for SWP',
+    desc: 'Debt and hybrid funds offer more stable returns for SWP',
+  },
+  {
+    icon: '📊',
+    title: 'Review Annually',
+    desc: 'Adjust withdrawal amount based on fund performance',
+  },
+  {
+    icon: '🎯',
+    title: 'Start Early',
+    desc: 'Begin SWP after building sufficient corpus (2+ years)',
+  },
+];
+
+const investmentBasics = [
+  { name: 'Mutual Funds Basics', icon: '📚' },
+  { name: 'Risk Assessment', icon: '⚠️' },
+  { name: 'Tax Planning', icon: '💰' },
+  { name: 'Retirement Planning', icon: '🏖️' },
 ];
 
 export default function Sidebar() {
@@ -47,50 +62,50 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Quick Tips */}
+      {/* SWP Pro Tips */}
       <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-lg p-4">
         <h3 className="text-base font-semibold text-gray-800 mb-3 flex items-center gap-2">
-          <span>💡</span> Quick Tips
+          <span>🎯</span> SWP Pro Tips
         </h3>
-        <ul className="space-y-2">
-          {quickTips.map((tip, index) => (
-            <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
-              <span className="text-amber-500 mt-0.5">•</span>
-              <span>{tip}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Related Calculators */}
-      <div className="bg-white rounded-2xl shadow-lg p-4">
-        <h3 className="text-base font-semibold text-gray-800 mb-3 flex items-center gap-2">
-          <span>🧮</span> Other Calculators
-        </h3>
-        <div className="space-y-1">
-          {relatedCalculators.map((calc) => (
-            <a
-              key={calc.href}
-              href={calc.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
-            >
-              <span className="text-base">{calc.icon}</span>
-              <span className="text-sm text-gray-600 group-hover:text-blue-600 flex-1">
-                {calc.name}
-              </span>
-              <svg
-                className="w-3.5 h-3.5 text-gray-400 group-hover:text-blue-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
+        <div className="space-y-3">
+          {swpTips.map((tip, index) => (
+            <div key={index} className="flex items-start gap-2">
+              <span className="text-base mt-0.5">{tip.icon}</span>
+              <div>
+                <p className="text-sm font-medium text-gray-800">{tip.title}</p>
+                <p className="text-xs text-gray-600">{tip.desc}</p>
+              </div>
+            </div>
           ))}
         </div>
+      </div>
+
+      {/* Investment Basics - Coming Soon */}
+      <div className="bg-white rounded-2xl shadow-lg p-4">
+        <h3 className="text-base font-semibold text-gray-800 mb-3 flex items-center gap-2">
+          <span>📖</span> Investment Basics
+        </h3>
+        <div className="space-y-2">
+          {investmentBasics.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 text-gray-400"
+            >
+              <span className="text-sm">{item.icon}</span>
+              <span className="text-sm">{item.name}</span>
+              <span className="text-xs bg-gray-200 text-gray-500 px-1.5 py-0.5 rounded ml-auto">
+                Soon
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Disclaimer */}
+      <div className="bg-gray-50 rounded-xl p-3">
+        <p className="text-xs text-gray-500 leading-relaxed">
+          <strong>Disclaimer:</strong> This calculator is for educational purposes only. Actual returns may vary based on market conditions. Please consult a financial advisor before making investment decisions.
+        </p>
       </div>
     </aside>
   );
