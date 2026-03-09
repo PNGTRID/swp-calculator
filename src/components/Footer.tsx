@@ -23,10 +23,10 @@ export default function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-6">
-            {/* Calculator */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-10 gap-y-6">
+            {/* Calculators */}
             <div>
-              <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-3">Calculator</h3>
+              <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-3">Calculators</h3>
               <ul className="space-y-2">
                 <li>
                   <Link href="/" title="SWP Calculator" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
@@ -34,8 +34,18 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/swp-vs-sip" title="SWP vs SIP Comparison" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
-                    SWP vs SIP
+                  <Link href="/sip-calculator" title="SIP Calculator" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                    SIP Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/fd-calculator" title="FD Calculator" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                    FD Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/emi-calculator" title="EMI Calculator" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                    EMI Calculator
                   </Link>
                 </li>
               </ul>
@@ -48,6 +58,11 @@ export default function Footer() {
                 <li>
                   <Link href="/what-is-swp" title="What is SWP?" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
                     What is SWP?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/swp-vs-sip" title="SWP vs SIP" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                    SWP vs SIP
                   </Link>
                 </li>
                 <li>

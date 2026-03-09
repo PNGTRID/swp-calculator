@@ -264,14 +264,21 @@ export default function SWPCalculator() {
               <FAQSection />
             </section>
 
-            {/* Internal Links */}
+            {/* Other Calculators */}
             <section>
-              <div className="grid grid-cols-2 gap-3">
-                <Link href="/what-is-swp" title="What is SWP? - Complete Guide to Systematic Withdrawal Plans" className="bg-blue-50 hover:bg-blue-100 rounded-xl p-4 text-center transition-colors border border-blue-100">
-                  <p className="text-sm font-medium text-gray-800">What is SWP? →</p>
+              <h3 className="text-lg font-semibold text-gray-800 mb-3 text-center">Other Calculators</h3>
+              <div className="grid grid-cols-3 gap-3">
+                <Link href="/sip-calculator" title="SIP Calculator - Systematic Investment Plan" className="bg-green-50 hover:bg-green-100 rounded-xl p-4 text-center transition-colors border border-green-100">
+                  <p className="text-2xl mb-2">📈</p>
+                  <p className="text-sm font-medium text-gray-800">SIP Calculator</p>
                 </Link>
-                <Link href="/swp-vs-sip" title="SWP vs SIP - Compare Investment Strategies" className="bg-green-50 hover:bg-green-100 rounded-xl p-4 text-center transition-colors border border-green-100">
-                  <p className="text-sm font-medium text-gray-800">SWP vs SIP →</p>
+                <Link href="/fd-calculator" title="FD Calculator - Fixed Deposit" className="bg-amber-50 hover:bg-amber-100 rounded-xl p-4 text-center transition-colors border border-amber-100">
+                  <p className="text-2xl mb-2">🏦</p>
+                  <p className="text-sm font-medium text-gray-800">FD Calculator</p>
+                </Link>
+                <Link href="/emi-calculator" title="EMI Calculator - Loan EMI" className="bg-purple-50 hover:bg-purple-100 rounded-xl p-4 text-center transition-colors border border-purple-100">
+                  <p className="text-2xl mb-2">🏠</p>
+                  <p className="text-sm font-medium text-gray-800">EMI Calculator</p>
                 </Link>
               </div>
             </section>
