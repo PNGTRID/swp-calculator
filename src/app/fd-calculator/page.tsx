@@ -42,31 +42,8 @@ export default function FDCalculator() {
   }, [principal, interestRate, tenure, compounding]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-100/50 sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-blue-600 hover:text-blue-700 transition-colors">
-            SWP Calculator
-          </Link>
-          <div className="flex items-center gap-1">
-            <Link href="/" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-              SWP Calculator
-            </Link>
-            <Link href="/sip-calculator" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-              SIP Calculator
-            </Link>
-            <Link href="/fd-calculator" className="px-3 py-2 text-sm text-amber-600 bg-amber-50 rounded-lg font-medium">
-              FD Calculator
-            </Link>
-            <Link href="/emi-calculator" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-              EMI Calculator
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      <div className="max-w-5xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 py-8">
+      <div className="max-w-5xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">

@@ -39,28 +39,8 @@ export default function SIPCalculator() {
   }, [monthlyInvestment, expectedReturn, timePeriod]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-100/50 sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-blue-600 hover:text-blue-700 transition-colors">
-            SWP Calculator
-          </Link>
-          <div className="flex items-center gap-1">
-            <Link href="/" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-              SWP Calculator
-            </Link>
-            <Link href="/sip-calculator" className="px-3 py-2 text-sm text-green-600 bg-green-50 rounded-lg font-medium">
-              SIP Calculator
-            </Link>
-            <Link href="/fd-calculator" className="px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-              FD Calculator
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      <div className="max-w-5xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-8">
+      <div className="max-w-5xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
