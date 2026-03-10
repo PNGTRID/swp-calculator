@@ -3,6 +3,9 @@ import Link from 'next/link';
 const internalPages = [
   { name: 'What is SWP?', href: '/what-is-swp', icon: '📖', desc: 'Learn about Systematic Withdrawal Plans', title: 'What is SWP? - Systematic Withdrawal Plan Guide' },
   { name: 'SWP vs SIP', href: '/swp-vs-sip', icon: '⚖️', desc: 'Compare investment strategies', title: 'SWP vs SIP Comparison - Investment Strategies' },
+  { name: 'SWP vs FD', href: '/swp-vs-fd', icon: '🏦', desc: 'Monthly income comparison', title: 'SWP vs Fixed Deposit - Which is Better?' },
+  { name: 'Best SWP Funds 2026', href: '/best-swp-funds', icon: '🏆', desc: 'Top 10 funds for SWP', title: 'Best SWP Mutual Funds in India 2026' },
+  { name: 'SWP Case Studies', href: '/swp-case-studies', icon: '📚', desc: 'Real retirement examples', title: 'SWP Case Studies - Real Retirement Planning Examples' },
 ];
 
 const swpTips = [

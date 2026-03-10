@@ -135,3 +135,144 @@ export function formatNumber(value: number): string {
     maximumFractionDigits: 0,
   }).format(value);
 }
+
+// ============================================
+// Reverse SWP Calculator Functions
+// Calculate required corpus for desired monthly income
+// ============================================
+
+export interface ReverseSWPInput {
+  monthlyIncome: number; // Desired monthly withdrawal amount in rupees
+  timePeriod: number; // Investment period in years
+  expectedReturnRate: number; // Expected annual return rate in percentage
+}
+
+export interface ReverseSWPResult {
+  requiredCorpus: number; // Required initial investment
+  totalWithdrawal: number; // Total amount to be withdrawn
+  totalInterestEarned: number; // Total interest earned during period
+  finalValue: number; // Remaining corpus (should be ~0 for exact calculation)
+}
+
+/**
+ * Calculate required corpus for a desired monthly income using binary search
+ * This finds the exact corpus needed to sustain monthly withdrawals for the given period
+ * @param input - Reverse SWP input parameters
+ * @returns Reverse SWP calculation results
+ */
+export function calculateReverseSWP(input: ReverseSWPInput): ReverseSWPResult {
+  const { monthlyIncome, timePeriod, expectedReturnRate } = input;
+
+  const monthlyReturnRate = expectedReturnRate / 100 / 12;
+  const totalMonths = timePeriod * 12;
+
+  // Binary search to find the required corpus
+  let low = monthlyIncome; // Minimum: at least one month's withdrawal
+  let high = monthlyIncome * totalMonths * 3; // Upper bound: 3x total withdrawals (generous estimate)
+  let corpus = 0;
+
+  // Binary search with 100 iterations for precision
+  for (let i = 0; i < 100; i++) {
+    corpus = (low + high) / 2;
+    let balance = corpus;
+    let totalWithdrawal = 0;
+
+    // Simulate month by month
+    for (let month = 1; month <= totalMonths; month++) {
+      // Add monthly interest
+      const monthlyInterest = balance * monthlyReturnRate;
+      balance += monthlyInterest;
+
+      // Withdraw monthly amount
+      balance -= monthlyIncome;
+      totalWithdrawal += monthlyIncome;
+
+      // If balance goes negative, corpus is too small
+      if (balance < 0) {
+        low = corpus;
+        break;
+      }
+    }
+
+    // If balance remained positive at end, corpus might be too large
+    if (balance >= 0) {
+      high = corpus;
+    }
+
+    // Stop when we're close enough (within 1 rupee)
+    if (high - low < 1) {
+      break;
+    }
+  }
+
+  // Calculate final values with the found corpus
+  let finalBalance = corpus;
+  let totalInterestEarned = 0;
+  let totalWithdrawal = 0;
+
+  for (let month = 1; month <= totalMonths; month++) {
+    const monthlyInterest = finalBalance * monthlyReturnRate;
+    totalInterestEarned += monthlyInterest;
+    finalBalance += monthlyInterest;
+    finalBalance -= monthlyIncome;
+    totalWithdrawal += monthlyIncome;
+
+    if (finalBalance < 0) {
+      finalBalance = 0;
+      break;
+    }
+  }
+
+  return {
+    requiredCorpus: Math.ceil(corpus),
+    totalWithdrawal,
+    totalInterestEarned,
+    finalValue: Math.max(0, finalBalance),
+  };
+}
+
+/**
+ * Get month-by-month data for reverse SWP calculation
+ * @param input - Reverse SWP input parameters
+ * @returns Array of monthly data
+ */
+export function getReverseMonthlyData(input: ReverseSWPInput): MonthlyData[] {
+  const result = calculateReverseSWP(input);
+  const { expectedReturnRate, timePeriod } = input;
+  const monthlyIncome = input.monthlyIncome;
+
+  const monthlyReturnRate = expectedReturnRate / 100 / 12;
+  const totalMonths = timePeriod * 12;
+
+  const monthlyData: MonthlyData[] = [];
+  let currentBalance = result.requiredCorpus;
+
+  for (let month = 1; month <= totalMonths; month++) {
+    const openingBalance = currentBalance;
+    const interestEarned = currentBalance * monthlyReturnRate;
+
+    currentBalance += interestEarned;
+    currentBalance -= monthlyIncome;
+
+    if (currentBalance < 0) {
+      monthlyData.push({
+        month,
+        openingBalance,
+        interestEarned,
+        withdrawal: monthlyIncome,
+        closingBalance: 0,
+      });
+      break;
+    }
+
+    monthlyData.push({
+      month,
+      openingBalance,
+      interestEarned,
+      withdrawal: monthlyIncome,
+      closingBalance: currentBalance,
+    });
+  }
+
+  return monthlyData;
+}
