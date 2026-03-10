@@ -7,10 +7,10 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: '/', label: 'SWP', title: 'SWP Calculator - Free Online Tool' },
-    { href: '/sip-calculator', label: 'SIP', title: 'SIP Calculator - Systematic Investment Plan' },
-    { href: '/fd-calculator', label: 'FD', title: 'FD Calculator - Fixed Deposit Calculator' },
-    { href: '/emi-calculator', label: 'EMI', title: 'EMI Calculator - Loan EMI Calculator' },
+    { href: '/', label: 'SWP Calculator', title: 'SWP Calculator - Free Online Tool' },
+    { href: '/sip-calculator', label: 'SIP Calculator', title: 'SIP Calculator - Systematic Investment Plan' },
+    { href: '/fd-calculator', label: 'FD Calculator', title: 'FD Calculator - Fixed Deposit Calculator' },
+    { href: '/emi-calculator', label: 'EMI Calculator', title: 'EMI Calculator - Loan EMI Calculator' },
   ];
 
   return (
