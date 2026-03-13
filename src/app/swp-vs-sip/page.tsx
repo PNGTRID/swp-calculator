@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'SWP vs SIP - Difference Between Systematic Withdrawal and Investment Plans | SWP Calculator',
@@ -150,6 +151,14 @@ export default function SWPvsSIP() {
               </div>
             </section>
           </article>
+
+          <RelatedArticles
+            links={[
+              { href: '/what-is-swp', label: 'What is SWP', description: 'Learn the basics of Systematic Withdrawal Plans and how they work.' },
+              { href: '/best-swp-funds', label: 'Best SWP Funds', description: 'Top 10 mutual funds for systematic withdrawal plans in India.' },
+              { href: '/sip-calculator', label: 'SIP Calculator', description: 'Calculate your SIP returns and plan your investments.' },
+            ]}
+          />
         </div>
       </div>
     </>

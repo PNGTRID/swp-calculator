@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'Tax Planning for Mutual Funds - Capital Gains Tax Guide | SWP Calculator',
@@ -170,6 +171,13 @@ export default function TaxPlanning() {
               </ul>
             </section>
           </article>
+
+          <RelatedArticles
+            links={[
+              { href: '/retirement-planning', label: 'Retirement Planning', description: 'Plan tax-efficient retirement income with SWP.' },
+              { href: '/mutual-funds-basics', label: 'Mutual Funds Basics', description: 'Learn about different types of mutual funds and taxation.' },
+            ]}
+          />
 
           <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl shadow-lg p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-4">Plan Tax-Efficient SWP</h2>

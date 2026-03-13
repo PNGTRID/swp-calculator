@@ -66,6 +66,21 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/swp-vs-fd" title="SWP vs FD" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                    SWP vs FD
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/best-swp-funds" title="Best SWP Funds" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                    Best SWP Funds
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/swp-case-studies" title="SWP Case Studies" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                    Case Studies
+                  </Link>
+                </li>
+                <li>
                   <Link href="/mutual-funds-basics" title="Mutual Funds Basics" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
                     Mutual Funds
                   </Link>

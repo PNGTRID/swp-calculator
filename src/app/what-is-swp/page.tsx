@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'What is SWP? - Systematic Withdrawal Plan Explained | SWP Calculator',
@@ -145,6 +146,14 @@ export default function WhatIsSWP() {
               </div>
             </section>
           </article>
+
+          <RelatedArticles
+            links={[
+              { href: '/swp-vs-sip', label: 'SWP vs SIP', description: 'Compare systematic withdrawal and investment plans to choose the right strategy.' },
+              { href: '/swp-vs-fd', label: 'SWP vs Fixed Deposit', description: 'Understand the differences between SWP and FD for regular income.' },
+              { href: '/mutual-funds-basics', label: 'Mutual Funds Basics', description: 'Learn the fundamentals of mutual fund investing for beginners.' },
+            ]}
+          />
 
           <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-4">Calculate Your SWP Returns</h2>

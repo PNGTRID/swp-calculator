@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy | SWP Calculator',
   description: 'Privacy policy for SWP Calculator. Learn how we collect, use, and protect your information.',
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPolicy() {

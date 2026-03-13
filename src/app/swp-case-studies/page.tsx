@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'SWP Case Studies - Real Retirement Planning Examples | SWP Calculator',
@@ -551,6 +552,13 @@ export default function SWPCaseStudies() {
               </div>
             </div>
           </section>
+
+          <RelatedArticles
+            links={[
+              { href: '/best-swp-funds', label: 'Best SWP Funds', description: 'Top 10 mutual funds for systematic withdrawal plans in India.' },
+              { href: '/retirement-planning', label: 'Retirement Planning', description: 'Complete guide to planning your retirement with SWP.' },
+            ]}
+          />
 
           {/* CTA */}
           <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-8 text-center text-white">

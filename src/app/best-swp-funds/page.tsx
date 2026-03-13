@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'Best SWP Mutual Funds in India 2026 - Top 10 Funds for Systematic Withdrawal',
@@ -389,6 +390,14 @@ export default function BestSWPFunds() {
               </div>
             </div>
           </section>
+
+          <RelatedArticles
+            links={[
+              { href: '/swp-case-studies', label: 'SWP Case Studies', description: 'Real-world examples of successful SWP strategies and outcomes.' },
+              { href: '/retirement-planning', label: 'Retirement Planning', description: 'Plan your retirement income with SWP and mutual funds.' },
+              { href: '/swp-vs-fd', label: 'SWP vs FD', description: 'Compare systematic withdrawal plans with fixed deposits for monthly income.' },
+            ]}
+          />
 
           {/* CTA */}
           <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-8 text-center text-white">

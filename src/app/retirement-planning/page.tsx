@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'Retirement Planning with SWP - Generate Regular Income | SWP Calculator',
@@ -204,6 +205,14 @@ export default function RetirementPlanning() {
               </div>
             </section>
           </article>
+
+          <RelatedArticles
+            links={[
+              { href: '/tax-planning', label: 'Tax Planning', description: 'Optimize your mutual fund taxes and maximize returns.' },
+              { href: '/best-swp-funds', label: 'Best SWP Funds', description: 'Top 10 mutual funds for retirement SWP in India.' },
+              { href: '/swp-case-studies', label: 'SWP Case Studies', description: 'Real examples of successful retirement SWP strategies.' },
+            ]}
+          />
 
           <div className="bg-gradient-to-r from-purple-500 to-violet-600 rounded-2xl shadow-lg p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-4">Calculate Your Retirement SWP</h2>

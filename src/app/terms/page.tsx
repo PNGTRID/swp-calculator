@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Use | SWP Calculator',
   description: 'Terms of use and conditions for using SWP Calculator. Read our terms before using the calculator.',
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function TermsOfUse() {

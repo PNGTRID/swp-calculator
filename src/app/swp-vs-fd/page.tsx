@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'SWP vs FD: Which is Better for Monthly Income? Detailed Comparison',
@@ -363,6 +364,14 @@ export default function SWPvsFD() {
               </div>
             </div>
           </section>
+
+          <RelatedArticles
+            links={[
+              { href: '/what-is-swp', label: 'What is SWP', description: 'Understand how Systematic Withdrawal Plans work for mutual funds.' },
+              { href: '/best-swp-funds', label: 'Best SWP Funds', description: 'Top 10 mutual funds for systematic withdrawal in India 2026.' },
+              { href: '/fd-calculator', label: 'FD Calculator', description: 'Calculate your fixed deposit returns and compare with SWP.' },
+            ]}
+          />
 
           {/* CTA */}
           <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-8 text-center text-white">

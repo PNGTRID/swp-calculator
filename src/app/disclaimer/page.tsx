@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Disclaimer | SWP Calculator',
   description: 'Important disclaimer for SWP Calculator users. Understand the limitations of this financial tool.',
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function Disclaimer() {

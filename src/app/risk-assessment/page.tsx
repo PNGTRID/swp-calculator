@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import RelatedArticles from '@/components/RelatedArticles';
 
 export const metadata: Metadata = {
   title: 'Investment Risk Assessment - Understand Your Risk Profile | SWP Calculator',
@@ -127,7 +128,7 @@ export default function RiskAssessment() {
               </ul>
             </section>
 
-            <section>
+            <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Risk Management Tips</h2>
               <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded">
                 <ul className="space-y-2 text-gray-700">
@@ -139,7 +140,194 @@ export default function RiskAssessment() {
                 </ul>
               </div>
             </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Self-Assessment Quiz</h2>
+              <p className="text-gray-600 mb-4">Answer these 5 questions to determine your risk profile:</p>
+              <div className="space-y-4">
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">1. What is your investment timeline?</h3>
+                  <ul className="text-sm text-gray-600 space-y-1 ml-4">
+                    <li>• <strong>Less than 3 years</strong> → Conservative (add 1 point)</li>
+                    <li>• <strong>3-7 years</strong> → Moderate (add 2 points)</li>
+                    <li>• <strong>More than 7 years</strong> → Aggressive (add 3 points)</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">2. If your investment drops 20% in 2 months, you:</h3>
+                  <ul className="text-sm text-gray-600 space-y-1 ml-4">
+                    <li>• <strong>Sell everything in panic</strong> → Conservative (add 1 point)</li>
+                    <li>• <strong>Hold and wait for recovery</strong> → Moderate (add 2 points)</li>
+                    <li>• <strong>Invest more at lower prices</strong> → Aggressive (add 3 points)</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">3. Your primary investment goal is:</h3>
+                  <ul className="text-sm text-gray-600 space-y-1 ml-4">
+                    <li>• <strong>Never lose money</strong> → Conservative (add 1 point)</li>
+                    <li>• <strong>Balanced growth with safety</strong> → Moderate (add 2 points)</li>
+                    <li>• <strong>Maximum wealth creation</strong> → Aggressive (add 3 points)</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">4. Do you have 6+ months emergency fund?</h3>
+                  <ul className="text-sm text-gray-600 space-y-1 ml-4">
+                    <li>• <strong>No</strong> → Conservative (add 1 point)</li>
+                    <li>• <strong>Yes, 6-12 months</strong> → Moderate (add 2 points)</li>
+                    <li>• <strong>Yes, more than 12 months</strong> → Aggressive (add 3 points)</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">5. Your age group:</h3>
+                  <ul className="text-sm text-gray-600 space-y-1 ml-4">
+                    <li>• <strong>55+ years</strong> → Conservative (add 1 point)</li>
+                    <li>• <strong>35-55 years</strong> → Moderate (add 2 points)</li>
+                    <li>• <strong>Under 35 years</strong> → Aggressive (add 3 points)</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-6 bg-amber-100 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-2">📊 Your Score:</h3>
+                <ul className="text-sm text-gray-700 space-y-1">
+                  <li>• <strong>5-8 points:</strong> Conservative Investor - Focus on capital protection</li>
+                  <li>• <strong>9-12 points:</strong> Moderate Investor - Balance of growth and safety</li>
+                  <li>• <strong>13-15 points:</strong> Aggressive Investor - Focus on wealth creation</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Asset Allocation by Age</h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-amber-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-gray-700">Age Group</th>
+                      <th className="px-4 py-3 text-center font-semibold text-blue-700">Equity</th>
+                      <th className="px-4 py-3 text-center font-semibold text-green-700">Debt</th>
+                      <th className="px-4 py-3 text-center font-semibold text-gray-700">Cash/Liquid</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100">
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">20-30 years</td>
+                      <td className="px-4 py-3 text-center font-medium text-blue-600">70-80%</td>
+                      <td className="px-4 py-3 text-center font-medium text-green-600">15-25%</td>
+                      <td className="px-4 py-3 text-center font-medium text-gray-600">5-10%</td>
+                    </tr>
+                    <tr className="bg-gray-50/50">
+                      <td className="px-4 py-3 text-gray-600">30-45 years</td>
+                      <td className="px-4 py-3 text-center font-medium text-blue-600">60-70%</td>
+                      <td className="px-4 py-3 text-center font-medium text-green-600">25-35%</td>
+                      <td className="px-4 py-3 text-center font-medium text-gray-600">5-10%</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">45-55 years</td>
+                      <td className="px-4 py-3 text-center font-medium text-blue-600">50-60%</td>
+                      <td className="px-4 py-3 text-center font-medium text-green-600">35-45%</td>
+                      <td className="px-4 py-3 text-center font-medium text-gray-600">5-10%</td>
+                    </tr>
+                    <tr className="bg-gray-50/50">
+                      <td className="px-4 py-3 text-gray-600">55-65 years</td>
+                      <td className="px-4 py-3 text-center font-medium text-blue-600">30-40%</td>
+                      <td className="px-4 py-3 text-center font-medium text-green-600">50-60%</td>
+                      <td className="px-4 py-3 text-center font-medium text-gray-600">10-15%</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">65+ years</td>
+                      <td className="px-4 py-3 text-center font-medium text-blue-600">20-30%</td>
+                      <td className="px-4 py-3 text-center font-medium text-green-600">60-70%</td>
+                      <td className="px-4 py-3 text-center font-medium text-gray-600">10-15%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">* These are general guidelines. Adjust based on your personal circumstances.</p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Real Investor Profiles</h2>
+              <div className="space-y-4">
+                <div className="bg-green-50 rounded-xl p-5 border-l-4 border-green-500">
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl">👴</span>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Conservative: Retired Teacher, 62 years</h3>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Portfolio:</strong> 80% Debt Funds, 15% Balanced Funds, 5% Liquid
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Strategy:</strong> Focus on capital preservation with SWP of 5% annually. Needs stable income.
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Rationale:</strong> Low risk tolerance, needs predictable income, can&apos;t recover from major losses.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-yellow-50 rounded-xl p-5 border-l-4 border-yellow-500">
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl">👩</span>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Moderate: IT Professional, 38 years</h3>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Portfolio:</strong> 50% Equity Funds, 40% Debt Funds, 10% Liquid
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Strategy:</strong> SIP of ₹25,000/month with goal of retirement in 20 years.
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Rationale:</strong> Moderate risk for growth, but stable income allows for some safety net.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-red-50 rounded-xl p-5 border-l-4 border-red-500">
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl">👨</span>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Aggressive: Entrepreneur, 28 years</h3>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Portfolio:</strong> 80% Equity (Mid/Small cap), 15% Debt, 5% Liquid
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Strategy:</strong> Aggressive SIP of ₹50,000/month targeting financial freedom by 45.
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        <strong>Rationale:</strong> Long horizon allows recovery from volatility. High risk capacity for maximum growth.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                <div className="border-b border-gray-100 pb-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">Can my risk profile change over time?</h3>
+                  <p className="text-gray-600 text-sm">Yes! Your risk profile should evolve with age, income, and life circumstances. Review your risk tolerance annually and rebalance your portfolio accordingly. Most investors become more conservative as they age.</p>
+                </div>
+                <div className="border-b border-gray-100 pb-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">Should I have different risk profiles for different goals?</h3>
+                  <p className="text-gray-600 text-sm">Absolutely! Your retirement corpus can be aggressive (long timeline), while your child&apos;s education fund might be moderate, and your emergency fund should be conservative. Treat each goal with its own risk profile.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-2">What if my risk tolerance is lower than my age suggests?</h3>
+                  <p className="text-gray-600 text-sm">Always prioritize your comfort level over theoretical allocations. If you can&apos;t sleep during market crashes, you&apos;re taking too much risk. It&apos;s better to have lower returns with peace of mind than panic-sell during downturns.</p>
+                </div>
+              </div>
+            </section>
           </article>
+
+          <RelatedArticles
+            links={[
+              { href: '/mutual-funds-basics', label: 'Mutual Funds Basics', description: 'Complete beginner\'s guide to understanding mutual funds.' },
+              { href: '/retirement-planning', label: 'Retirement Planning', description: 'Plan your retirement income with SWP strategies.' },
+              { href: '/best-swp-funds', label: 'Best SWP Funds', description: 'Top 10 funds suitable for different risk profiles.' },
+            ]}
+          />
 
           <div className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl shadow-lg p-8 text-center text-white">
             <h2 className="text-2xl font-bold mb-4">Plan Your SWP Withdrawals</h2>
