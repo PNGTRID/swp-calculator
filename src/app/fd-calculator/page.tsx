@@ -2,18 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-function formatCurrency(value: number): string {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-    maximumFractionDigits: 0,
-  }).format(value);
-}
-
-function formatNumber(value: number): string {
-  return new Intl.NumberFormat('en-IN').format(value);
-}
+import { formatCurrency, formatNumber } from '@/utils/swpCalculator';
 
 export default function FDCalculator() {
   const [principal, setPrincipal] = useState(100000);

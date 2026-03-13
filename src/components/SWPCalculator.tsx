@@ -14,7 +14,6 @@ import {
   type ReverseSWPResult,
 } from '@/utils/swpCalculator';
 import FAQSection from './FAQSection';
-import Footer from './Footer';
 import MonthlyBreakdown from './MonthlyBreakdown';
 import BalanceChart from './BalanceChart';
 import Sidebar from './Sidebar';
@@ -552,9 +551,6 @@ export default function SWPCalculator() {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <Footer />
       </div>
     </div>
   );
