@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'EMI Calculator - Loan EMI Calculator | SWP Calculator',
   description: 'Free EMI Calculator online. Calculate your loan EMI, total interest, and total payment for home loan, car loan, or personal loan.',
   keywords: ['EMI calculator', 'loan calculator', 'home loan EMI', 'car loan EMI', 'personal loan calculator'],
+  alternates: {
+    canonical: 'https://swpcalculator.online/emi-calculator',
+  },
 };
 
 export default function EMICalculatorLayout({

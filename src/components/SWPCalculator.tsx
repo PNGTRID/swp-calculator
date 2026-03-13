@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import {
   calculateSWP,
   formatCurrency,
@@ -20,23 +21,64 @@ import Sidebar from './Sidebar';
 
 type CalculatorMode = 'forward' | 'reverse';
 
-export default function SWPCalculator() {
-  // Calculator mode state
-  const [mode, setMode] = useState<CalculatorMode>('forward');
+// Default values
+const defaultInputs: SWPInput = {
+  totalInvestment: 500000,
+  withdrawalPerMonth: 10000,
+  expectedReturnRate: 8,
+  timePeriod: 5,
+};
 
-  // Forward calculator state
-  const [inputs, setInputs] = useState<SWPInput>({
-    totalInvestment: 500000,
-    withdrawalPerMonth: 10000,
-    expectedReturnRate: 8,
-    timePeriod: 5,
+const defaultReverseInputs: ReverseSWPInput = {
+  monthlyIncome: 50000,
+  timePeriod: 20,
+  expectedReturnRate: 8,
+};
+
+export default function SWPCalculator() {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Calculator mode state - initialize from URL or default
+  const [mode, setMode] = useState<CalculatorMode>(() => {
+    const urlMode = searchParams.get('mode');
+    return (urlMode === 'forward' || urlMode === 'reverse') ? urlMode : 'forward';
+  });
+
+  // Forward calculator state - initialize from URL or defaults
+  const [inputs, setInputs] = useState<SWPInput>(() => {
+    const investment = searchParams.get('investment');
+    const withdrawal = searchParams.get('withdrawal');
+    const rate = searchParams.get('rate');
+    const period = searchParams.get('period');
+
+    // If any URL param exists, use URL values
+    if (investment || withdrawal || rate || period) {
+      return {
+        totalInvestment: investment ? parseFloat(investment) : defaultInputs.totalInvestment,
+        withdrawalPerMonth: withdrawal ? parseFloat(withdrawal) : defaultInputs.withdrawalPerMonth,
+        expectedReturnRate: rate ? parseFloat(rate) : defaultInputs.expectedReturnRate,
+        timePeriod: period ? parseInt(period) : defaultInputs.timePeriod,
+      };
+    }
+    return defaultInputs;
   });
 
   // Reverse calculator state
-  const [reverseInputs, setReverseInputs] = useState<ReverseSWPInput>({
-    monthlyIncome: 50000,
-    timePeriod: 20,
-    expectedReturnRate: 8,
+  const [reverseInputs, setReverseInputs] = useState<ReverseSWPInput>(() => {
+    const income = searchParams.get('income');
+    const rPeriod = searchParams.get('rperiod');
+    const rRate = searchParams.get('rrate');
+
+    if (income || rPeriod || rRate) {
+      return {
+        monthlyIncome: income ? parseFloat(income) : defaultReverseInputs.monthlyIncome,
+        timePeriod: rPeriod ? parseInt(rPeriod) : defaultReverseInputs.timePeriod,
+        expectedReturnRate: rRate ? parseFloat(rRate) : defaultReverseInputs.expectedReturnRate,
+      };
+    }
+    return defaultReverseInputs;
   });
 
   const [result, setResult] = useState<SWPResult>({
@@ -71,6 +113,33 @@ export default function SWPCalculator() {
       setMonthlyData(getReverseMonthlyData(reverseInputs));
     }
   }, [reverseInputs, mode]);
+
+  // Sync URL params when inputs change (debounced)
+  const updateUrlParams = useCallback(() => {
+    const params = new URLSearchParams();
+
+    if (mode === 'forward') {
+      params.set('investment', inputs.totalInvestment.toString());
+      params.set('withdrawal', inputs.withdrawalPerMonth.toString());
+      params.set('rate', inputs.expectedReturnRate.toString());
+      params.set('period', inputs.timePeriod.toString());
+      params.set('mode', 'forward');
+    } else {
+      params.set('income', reverseInputs.monthlyIncome.toString());
+      params.set('rperiod', reverseInputs.timePeriod.toString());
+      params.set('rrate', reverseInputs.expectedReturnRate.toString());
+      params.set('mode', 'reverse');
+    }
+
+    const newUrl = `${pathname}?${params.toString()}`;
+    router.replace(newUrl, { scroll: false });
+  }, [mode, inputs, reverseInputs, pathname, router]);
+
+  // Update URL when inputs change (with debounce)
+  useEffect(() => {
+    const timer = setTimeout(updateUrlParams, 500);
+    return () => clearTimeout(timer);
+  }, [updateUrlParams]);
 
   const handleInputChange = (field: keyof SWPInput, value: string | number) => {
     const numValue = typeof value === 'string' ? parseFloat(value) || 0 : value;
